@@ -9,10 +9,12 @@ int main() {
     wcout.imbue(locale(""));
     enum He : wchar_t { He1 = L'何', He2 = L'河', He3 = L'荷', He4 = L'核', He5 = L'合', He6 = L'禾', He7 = L'盒', He8 = L'赫', He9 = L'贺', He10 = L'阖', He11 = L'鹤', He12 = L'褐', He13 = L'劾', He14 = L'和', He15 = L'涸', He16 = L'曷' };
     enum Yi : wchar_t { Yi1 = L'意', Yi2 = L'义', Yi3 = L'益', Yi4 = L'毅', Yi5 = L'忆', Yi6 = L'议', Yi7 = L'异', Yi8 = L'译', Yi9 = L'翼', Yi10 = L'艺', Yi11 = L'逸', Yi12 = L'溢', Yi13 = L'裔', Yi14 = L'驿', Yi15 = L'疫', Yi16 = L'谊' };
-    enum Wei : wchar_t { Wei1 = L'味', Wei2 = L'位', Wei3 = L'未', Wei4 = L'谓', Wei5 = L'卫', Wei6 = L'魏', Wei7 = L'慰', Wei8 = L'喂', Wei9 = L'胃', Wei10 = L'渭', Wei11 = L'蔚', Wei12 = L'尉', Wei13 = L'畏', Wei14 = L'为', Wei15 = L'偎', Wei16 = L'谓' };
+    enum Wei : wchar_t { Wei1 = L'味', Wei2 = L'位', Wei3 = L'未', Wei4 = L'谓', Wei5 = L'卫', Wei6 = L'魏', Wei7 = L'慰', Wei8 = L'喂', Wei9 = L'胃', Wei10 = L'渭', Wei11 = L'蔚', Wei12 = L'尉', Wei13 = L'畏', Wei14 = L'为', Wei15 = L'偎', Wei16 = L'惟' };
     char str[1024];
     cin.getline(str, 1024);
     for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;
         if (i % 3 == 0) {
             switch (str[i]) {
             case 'a':wcout << (wchar_t)He::He1; break;
